@@ -11,3 +11,36 @@
   display: flex;
   gap: 20px;
 }
+.circle{
+  background-color: black=;
+  width: 60px;
+  height: 60px;
+  border-radius: 50px;
+}
+.flex{
+  display: flex;
+  gap: 30px;
+  background-color: black;
+  width: 60px;
+  padding:15px;
+  border-radius: 50px;
+  flex-direction: column;
+}
+
+.red{
+  background-color: red;
+}
+
+.green{
+  background-color: green;
+}
+
+
+.yellow{
+  background-color: yellow;
+}
+
+.grey{
+background-color: rgb(44, 43, 43);
+}
+
