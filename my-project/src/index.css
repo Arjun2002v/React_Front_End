@@ -44,3 +44,31 @@
 background-color: rgb(44, 43, 43);
 }
 
+img{
+  width: 300px;
+  height: 00px;
+}
+
+.modal{
+  background-color: brown;
+  width: 200px;
+  padding: 10px;
+  color: white;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-overlay {
+  background-color: rgba(0, 0, 0, 0.7);
+  inset: 0;
+  position: fixed;
+
+  align-items: center;
+  display: flex;
+  justify-content: center;
+
+  padding: 20px;
+}

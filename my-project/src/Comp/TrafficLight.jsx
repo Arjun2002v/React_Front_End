@@ -7,18 +7,18 @@ const TrafficLight = () => {
 
     interval = setInterval(() => {
       setStart((prev) => {
-        if (prev == "green") return "yellow";
+        if (prev === "red") return "green";
+        if (prev === "green") return "yellow";
         if (prev == "yellow") return "red";
-        return "green";
       });
     }, 2000);
     return () => clearInterval(interval);
   });
   return (
     <div className="flex">
-      <div className={`circle ${start == "red" ? "red" : "grey"}`}></div>
-      <div className={`circle ${start == "yellow" ? "yellow" : "grey"}`}></div>
-      <div className={`circle ${start == "green" ? "green" : "grey"}`}></div>
+      <div className={`circle ${start === "red" ? "red" : "grey"}`}></div>
+      <div className={`circle ${start === "yellow" ? "yellow" : "grey"}`}></div>
+      <div className={`circle ${start === "green" ? "green" : "grey"}`}></div>
     </div>
   );
 };
