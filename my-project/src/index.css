@@ -1,0 +1,13 @@
+.idk {
+  width: 40px;
+  height: 40px;
+  color: black
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.div {
+  display: flex;
+  gap: 20px;
+}
