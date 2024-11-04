@@ -20,7 +20,7 @@ const App = () => {
       {/* <TrafficLight /> */}
       <ImageCarousal />
       {/* <Modal /> */}
-      {/* <Pagination /> */}
+      <Pagination />
     </div>
   );
 };

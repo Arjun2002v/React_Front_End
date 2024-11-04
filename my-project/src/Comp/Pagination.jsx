@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 export const Pagination = () => {
   const [api, setData] = useState([]); // Initialize as an empty array
-  const [page, setPage] = useState(1);
+  let [page, setPage] = useState(1);
 
   const fetchData = async () => {
     const res = await fetch("https://dummyjson.com/products");
@@ -10,6 +10,17 @@ export const Pagination = () => {
     setData(data.products); // Access the 'products' array
   };
 
+  const next = () => {
+    const lastPage = Math.ceil(api.length / 10); // Total number of pages
+    const newPage = page === lastPage ? 1 : page + 1; // Go back to the first page if on the last page
+    setPage(newPage);
+  };
+
+  const prev = () => {
+    const last = Math.ceil(api.length / 10);
+    const Pp = page === 1 ? last : page - 1; // if on the first page then send it back to the last page
+    setPage(Pp);
+  };
   useEffect(() => {
     fetchData();
   }, []);
@@ -18,26 +29,20 @@ export const Pagination = () => {
   };
   return (
     <div>
-      <ul style={{ listStyleType: "none", padding: 0 }}>
-        {api.slice(page * 10 - 10, page * 10).map((item, index) => (
+      <ul>
+        {api.slice(page * 10 - 10, page * 10).map((item) => (
           <li key={item.id}>{item.title}</li>
         ))}
         {api.length > 0 && (
           <div>
-            <button disabled={page == 1} onClick={() => pagination(page - 1)}>
-              ⬅️
-            </button>
+            <button onClick={prev}>⬅️</button>
             {[...Array(Math.ceil(api.length / 10))].map((_, i) => (
-              <span key={i} onClick={() => pagination(i + 1) % api.length}>
+              <span key={i} onClick={() => pagination(i + 1)}>
                 {i + 1}
               </span>
             ))}
-            <button
-              disabled={page == api.length / 10}
-              onClick={() => pagination(page + 1)}
-            >
-              ➡️
-            </button>
+            <button onClick={next}> ➡️ </button>
+            {page}
           </div>
         )}
       </ul>
