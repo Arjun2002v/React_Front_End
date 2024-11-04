@@ -9,18 +9,17 @@ import Modal from "./Comp/Modal";
 import { Pagination } from "./Comp/Pagination";
 
 const App = () => {
-  const images = [];
   return (
     <div>
       <h1>Front-end React Practice</h1>
       {/* <DiceRoller /> */}
-      {/* <Timer />
+      {/* <Timer /> */}
       <Tabs />
-      <Digital /> */}
+      {/* <Digital /> */}
       {/* <TrafficLight /> */}
-      <ImageCarousal />
+      {/* <ImageCarousal /> */}
       {/* <Modal /> */}
-      <Pagination />
+      {/* <Pagination /> */}
     </div>
   );
 };

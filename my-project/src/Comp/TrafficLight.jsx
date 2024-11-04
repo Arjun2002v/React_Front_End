@@ -12,7 +12,7 @@ const TrafficLight = () => {
         if (prev == "yellow") return "red";
       });
     }, 2000);
-    return () => clearInterval(interval);
+    return () => clearInterval(interval); // used to stop the timer interval when anything unmounts
   });
   return (
     <div className="flex">

@@ -34,15 +34,19 @@ export const Pagination = () => {
           <li key={item.id}>{item.title}</li>
         ))}
         {api.length > 0 && (
-          <div>
+          <div className="page">
             <button onClick={prev}>⬅️</button>
             {[...Array(Math.ceil(api.length / 10))].map((_, i) => (
-              <span key={i} onClick={() => pagination(i + 1)}>
+              <span
+                key={i}
+                onClick={() => pagination(i + 1)}
+                className="numbers"
+                style={{ fontWeight: page == i + 1 ? "bold" : "normal" }}
+              >
                 {i + 1}
               </span>
             ))}
             <button onClick={next}> ➡️ </button>
-            {page}
           </div>
         )}
       </ul>
