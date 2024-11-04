@@ -72,3 +72,15 @@ img{
 
   padding: 20px;
 }
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+
+}
+h1{
+  color: green;
+  font-family: Jost Regular;
+}
+

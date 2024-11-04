@@ -13,7 +13,7 @@ const DiceRoller = () => {
 
   return (
     <div style={{ textAlign: "center", margin: "20px" }}>
-      <h1>Dice Roller</h1>
+      <h2>Dice Roller</h2>
       <input
         type="number"
         value={sides}

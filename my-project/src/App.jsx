@@ -6,18 +6,21 @@ import Digital from "./Comp/Digital";
 import TrafficLight from "./Comp/TrafficLight";
 import ImageCarousal from "./Comp/ImageCarousal";
 import Modal from "./Comp/Modal";
+import { Pagination } from "./Comp/Pagination";
 
 const App = () => {
   const images = [];
   return (
     <div>
-      <DiceRoller />
+      <h1>Front-end React Practice</h1>
+      {/* <DiceRoller /> */}
       {/* <Timer />
       <Tabs />
       <Digital /> */}
       {/* <TrafficLight /> */}
       {/* <ImageCarousal /> */}
-      <Modal />
+      {/* <Modal /> */}
+      <Pagination />
     </div>
   );
 };
