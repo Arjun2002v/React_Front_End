@@ -28,7 +28,7 @@ export const Pagination = () => {
               ⬅️
             </button>
             {[...Array(Math.ceil(api.length / 10))].map((_, i) => (
-              <span key={i} onClick={() => pagination(i + 1)}>
+              <span key={i} onClick={() => pagination(i + 1) % api.length}>
                 {i + 1}
               </span>
             ))}

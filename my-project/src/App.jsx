@@ -18,9 +18,9 @@ const App = () => {
       <Tabs />
       <Digital /> */}
       {/* <TrafficLight /> */}
-      {/* <ImageCarousal /> */}
+      <ImageCarousal />
       {/* <Modal /> */}
-      <Pagination />
+      {/* <Pagination /> */}
     </div>
   );
 };
