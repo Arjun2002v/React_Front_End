@@ -9,6 +9,7 @@ import React, { createContext } from "react";
 // import Pagination from "./Comp/Pagination";
 // import Accordian from "./Comp/Accordian";
 import Login from "./Comp/Login";
+import TodoList from "./Comp/TodoList";
 
 const UserContext = createContext(null);
 
@@ -29,7 +30,8 @@ const App = () => {
         {/* <Modal /> */}
         {/* <Accordian /> */}
         {/* <Pagination /> */}
-        <Login />
+        {/* <Login /> */}
+        <TodoList />
       </UserContext.Provider>
     </div>
   );
