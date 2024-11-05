@@ -1,28 +1,38 @@
-import React, { useReducer, useState } from "react";
+import React, {
+  createContext,
+  useContext,
+  useEffect,
+  useReducer,
+  useState,
+} from "react";
+
+import { UserContext } from "../App";
 
 const Login = () => {
-  const dummy = {
+  const context = useContext(UserContext);
+  const user = {
     name: "Arjun",
     password: "1234",
   };
   const [hey, setHey] = useState(false);
   const login = () => {
-    if (userName === dummy.name) {
+    if (!userName) alert("UserName is Needed");
+    if (!passWord) alert("Passord is Needed");
+    if (userName === user.name) {
       setHey(true);
     } else {
       alert("Incorrect UserName");
     }
-    if (passWord === dummy.password) {
+    if (passWord === user.password) {
       setHey(true);
     } else {
       alert("Incorrect PassWord");
     }
-    if (userName === dummy.name && passWord === dummy.password) {
+    if (userName === user.name && passWord === user.password) {
       alert("You Are Logged In");
     }
   };
 
-  const intial = { userName: "", passWord: "" };
   const reducer = (state, action) => {
     switch (action.type) {
       case "User":
@@ -32,12 +42,11 @@ const Login = () => {
     }
   };
 
-  const [state, dispatch] = useReducer(reducer, intial);
+  const [state, dispatch] = useReducer(reducer, context);
   const { userName, passWord } = state;
 
   return (
     <>
-      <div>Welcome to My Page</div>
       <div>
         <div className="log">
           <label htmlFor="UserName">UserName</label>
@@ -62,7 +71,8 @@ const Login = () => {
           />
         </div>
         <button onClick={login}>Login</button>
-        {hey ? <div>Welcome to My Page</div> : <></>}
+        {hey ? <h2>Welcome to our Page {userName}</h2> : <></>}
+        {/* {hey ? <Welcome /> : <></>} */}
       </div>
     </>
   );
