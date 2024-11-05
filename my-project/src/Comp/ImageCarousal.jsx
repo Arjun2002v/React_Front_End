@@ -25,6 +25,12 @@ const ImageCarousal = () => {
       <button onClick={prev}>◀️</button>
       <img src={images[curr]} alt="" />
       <button onClick={next}>▶️</button>
+      {Array(Math.ceil(images.length)).map((_, i) => (
+        <>
+          {" "}
+          <div className="circle">{i + 1}</div>
+        </>
+      ))}
     </>
   );
 };
