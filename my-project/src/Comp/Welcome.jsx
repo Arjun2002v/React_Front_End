@@ -1,11 +1,16 @@
 import React, { useContext } from "react";
 import { UserContext } from "../App";
+import { useParams } from "react-router-dom";
 
 const Welcome = () => {
-  const { userName } = useContext(UserContext);
+  const { name } = useContext(UserContext);
+  const { id } = useParams();
+
   return (
     <>
-      <h2>Welcome to My Page {userName}</h2>
+      <h2>
+        Welcome to my Page {id} {name}
+      </h2>
     </>
   );
 };

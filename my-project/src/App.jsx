@@ -1,37 +1,57 @@
 import React, { createContext } from "react";
-// import DiceRoller from "./Comp/DiceRoller";
-// import Timer from "./Comp/Timer";
-// import Tabs from "./Comp/Tabs";
-// import Digital from "./Comp/Digital";
-// import TrafficLight from "./Comp/TrafficLight";
-// import ImageCarousal from "./Comp/ImageCarousal";
-// import Modal from "./Comp/Modal";
-// import Pagination from "./Comp/Pagination";
-// import Accordian from "./Comp/Accordian";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import DiceRoller from "./Comp/DiceRoller";
+import Timer from "./Comp/Timer";
+import Tabs from "./Comp/Tabs";
+import Digital from "./Comp/Digital";
+import TrafficLight from "./Comp/TrafficLight";
+import ImageCarousal from "./Comp/ImageCarousal";
+import Modal from "./Comp/Modal";
+import Pagination from "./Comp/Pagination";
+import Accordian from "./Comp/Accordian";
 import Login from "./Comp/Login";
 import TodoList from "./Comp/TodoList";
+import Nav from "./Comp/Nav";
+import Welcome from "./Comp/Welcome";
 
 const UserContext = createContext(null);
 
 const App = () => {
-  const initial = { userName: "", passWord: "" };
+  const users = [
+    { id: "1", name: "Arjun", password: "1234" },
+    { id: "2", name: "Achu", password: "123" },
+    { id: "3", name: "Arju", password: "12" },
+  ];
+
+  const router = createBrowserRouter([
+    {
+      path: "/dice",
+      element: <DiceRoller />,
+    },
+    { path: "/todo", element: <TodoList /> },
+    { path: "/tabs", element: <Tabs /> },
+    { path: "/accordian", element: <Accordian /> },
+    { path: "/digital", element: <Digital /> },
+    { path: "/image", element: <ImageCarousal /> },
+    { path: "/modal", element: <Modal /> },
+    {
+      path: "/login",
+      element: <Login />,
+    },
+    { path: "/trafficlight", element: <TrafficLight /> },
+    { path: "/pagination", element: <Pagination /> },
+    { path: "/", element: <Nav /> },
+    {
+      path: "/welcome/:id",
+      element: <Welcome />,
+    },
+  ]);
 
   return (
     <div>
       <h1>Front-end React Practice</h1>
-      <UserContext.Provider value={initial}>
-        {/* Uncomment components below as needed */}
-        {/* <DiceRoller /> */}
-        {/* <Timer /> */}
-        {/* <Tabs /> */}
-        {/* <Digital /> */}
-        {/* <TrafficLight /> */}
-        {/* <ImageCarousal /> */}
-        {/* <Modal /> */}
-        {/* <Accordian /> */}
-        {/* <Pagination /> */}
-        {/* <Login /> */}
-        <TodoList />
+      <UserContext.Provider value={users}>
+        <RouterProvider router={router} />
       </UserContext.Provider>
     </div>
   );

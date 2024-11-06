@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 
-export const Pagination = () => {
+const Pagination = () => {
   const [api, setData] = useState([]); // Initialize as an empty array
   let [page, setPage] = useState(1);
-
   const fetchData = async () => {
     const res = await fetch("https://dummyjson.com/products");
     const data = await res.json();
@@ -53,3 +52,4 @@ export const Pagination = () => {
     </div>
   );
 };
+export default Pagination;

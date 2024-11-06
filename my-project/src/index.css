@@ -133,3 +133,19 @@ h1{
   justify-content: center;
   gap: 20px;
 }
+
+.navs{
+  color: white;
+  font-size: 20px;
+}
+.nav-container{
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  text-decoration: none;
+  font-family: Jost Regular;
+}
+body{
+
+  background-color: wheat;
+}
