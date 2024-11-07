@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Nav from "./Nav";
 
 const ImageCarousal = () => {
   const [curr, setCurr] = useState(0);
@@ -22,6 +23,7 @@ const ImageCarousal = () => {
   ];
   return (
     <>
+      <Nav />
       <button onClick={prev}>◀️</button>
       <img src={images[curr]} alt="" />
       <button onClick={next}>▶️</button>

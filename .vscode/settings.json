@@ -1,0 +1,5 @@
+{
+    "cody.autocomplete.enabled": true,
+    "cody.inlineChat.enabled": true,
+    "cody.autocomplete.experimental.dynamicMultilineCompletions": true
+}

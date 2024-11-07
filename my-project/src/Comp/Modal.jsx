@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Nav from "./Nav";
 
 const Modal = () => {
   const [show, setShow] = useState(false);
@@ -7,6 +8,7 @@ const Modal = () => {
   };
   return (
     <>
+      <Nav />
       <button onClick={click}>Show</button>
       {show && (
         <div className="modal-overlay">

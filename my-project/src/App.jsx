@@ -13,6 +13,7 @@ import Login from "./Comp/Login";
 import TodoList from "./Comp/TodoList";
 import Nav from "./Comp/Nav";
 import Welcome from "./Comp/Welcome";
+import RadioButtons from "./Comp/RadioButtons";
 
 const UserContext = createContext(null);
 
@@ -34,6 +35,7 @@ const App = () => {
     { path: "/digital", element: <Digital /> },
     { path: "/image", element: <ImageCarousal /> },
     { path: "/modal", element: <Modal /> },
+    { path: "/radio", element: <RadioButtons /> },
     {
       path: "/login",
       element: <Login />,
@@ -41,6 +43,7 @@ const App = () => {
     { path: "/trafficlight", element: <TrafficLight /> },
     { path: "/pagination", element: <Pagination /> },
     { path: "/", element: <Nav /> },
+    { path: "/timer", element: <Timer /> },
     {
       path: "/welcome/:id",
       element: <Welcome />,

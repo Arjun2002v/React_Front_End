@@ -35,6 +35,12 @@ const Nav = () => {
         <Link to="/accordian" className="navs">
           Accordian
         </Link>
+        <Link to="/radio" className="navs">
+          Radio
+        </Link>
+        <Link to="/timer" className="navs">
+          Timer
+        </Link>
         <Outlet />
       </div>
     </div>

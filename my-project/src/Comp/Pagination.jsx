@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
+import Nav from "./Nav";
 
 const Pagination = () => {
   const [api, setData] = useState([]); // Initialize as an empty array
   let [page, setPage] = useState(1);
   const fetchData = async () => {
+    //fetch the data from the API
     const res = await fetch("https://dummyjson.com/products");
     const data = await res.json();
     setData(data.products); // Access the 'products' array
@@ -28,10 +30,15 @@ const Pagination = () => {
   };
   return (
     <div>
+      <Nav />
       <ul>
-        {api.slice(page * 10 - 10, page * 10).map((item) => (
-          <li key={item.id}>{item.title}</li>
-        ))}
+        {api.slice(page * 10 - 10, page * 10).map(
+          (
+            item //to display the first 10 items we are using slice()
+          ) => (
+            <li key={item.id}>{item.title}</li>
+          )
+        )}
         {api.length > 0 && (
           <div className="page">
             <button onClick={prev}>⬅️</button>

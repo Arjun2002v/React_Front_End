@@ -1,14 +1,14 @@
 import React, { useContext, useReducer, useState } from "react";
 import { UserContext } from "../App";
 import { useNavigate } from "react-router-dom";
+import Nav from "./Nav";
 
 const Login = () => {
   const initial = { userName: "", password: "" };
-  const nav = useNavigate();
+  const nav = useNavigate(); // used to navigate through the router url
 
-  const users = useContext(UserContext);
+  const users = useContext(UserContext); //using context to pass state from global state
 
-  // Login handler
   const login = () => {
     if (!userName) alert("UserName is Needed");
     if (!password) alert("Password is Needed");
@@ -18,7 +18,7 @@ const Login = () => {
     );
     if (newUser) {
       alert("You Are Logged In");
-      nav(`/welcome/${newUser.id}`); // Make sure this matches your route setup
+      nav(`/welcome/${newUser.id}`); // if it is succussful then it should navigate to the welcome router
     } else {
       alert("Error in login");
     }
@@ -39,6 +39,7 @@ const Login = () => {
 
   return (
     <div>
+      <Nav />
       <div className="log">
         <label htmlFor="UserName">UserName</label>
         <input
@@ -51,7 +52,7 @@ const Login = () => {
       <div className="log">
         <label htmlFor="Password">Password</label>
         <input
-          type="password" // Change input type to "password" for better security
+          type="password"
           value={password}
           onChange={(e) => dispatch({ type: "Pass", payload: e.target.value })}
           required
