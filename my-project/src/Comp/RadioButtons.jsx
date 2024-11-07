@@ -5,7 +5,7 @@ const RadioButtons = () => {
   const [show, setshow] = useState(true);
 
   const change = (index) => {
-    setactive(index);
+    setactive(index); // to display the current checked button
   };
 
   return (
@@ -30,7 +30,7 @@ const RadioButtons = () => {
                 type="radio"
                 onChange={() => change("No")}
                 onClick={() => setshow(!show)}
-                checked={active === "No"}
+                checked={active === "No"} // this will store the previous button and dispy the current clicked button
               />
             </div>
             <div>
