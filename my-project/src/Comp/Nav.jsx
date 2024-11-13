@@ -41,6 +41,12 @@ const Nav = () => {
         <Link to="/timer" className="navs">
           Timer
         </Link>
+        <Link to="/ucf" className="navs">
+          Ucf
+        </Link>
+        <Link to="/grid" className="navs">
+          Grid
+        </Link>
         <Outlet />
       </div>
     </div>

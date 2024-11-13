@@ -164,3 +164,22 @@ body{
   border-radius: 50px;
 
 }
+
+.grids{
+  background-color:grey;
+  width:200px;
+  height:100px;
+  padding:10px;
+  display:flex;
+  align-item:center;
+  justify-content:center;
+ 
+}
+
+
+
+.greens{
+  background-color:green;
+}
+
+

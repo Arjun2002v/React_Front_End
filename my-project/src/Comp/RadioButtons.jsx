@@ -39,7 +39,7 @@ const RadioButtons = () => {
                 type="radio"
                 onChange={() => change("Yes")}
                 onClick={() => setshow(!show)}
-                checked={active === "Yes"}
+                checked={active === "Yes"   }
               />
             </div>
           </>
