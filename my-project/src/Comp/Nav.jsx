@@ -47,6 +47,12 @@ const Nav = () => {
         <Link to="/grid" className="navs">
           Grid
         </Link>
+        <Link to="/tic" className="navs">
+          Tic
+        </Link>
+        <Link to="/click" className="navs">
+          Click
+        </Link>
         <Outlet />
       </div>
     </div>

@@ -16,6 +16,8 @@ import Welcome from "./Comp/Welcome";
 import RadioButtons from "./Comp/RadioButtons";
 import { UCF_Replica } from "./Comp/UCF_Replica";
 import { Grid_Blinking } from "./Comp/Grid_Blinking";
+import { Tic } from "./Comp/Tic";
+import ClickabaleGrid from "./Comp/ClickabaleGrid";
 
 const UserContext = createContext(null);
 
@@ -52,6 +54,8 @@ const App = () => {
     },
     { path: "/ucf", element: <UCF_Replica /> },
     { path: "/grid", element: <Grid_Blinking /> },
+    { path: "/tic", element: <Tic /> },
+    { path: "/click", element: <ClickabaleGrid /> },
   ]);
 
   return (
