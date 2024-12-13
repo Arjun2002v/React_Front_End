@@ -41,8 +41,8 @@ const Nav = () => {
         <Link to="/timer" className="navs">
           Timer
         </Link>
-        <Link to="/ucf" className="navs">
-          Ucf
+        <Link to="/sidebar" className="navs">
+          Sidebar
         </Link>
         <Link to="/grid" className="navs">
           Grid
@@ -52,6 +52,9 @@ const Nav = () => {
         </Link>
         <Link to="/click" className="navs">
           Click
+        </Link>
+        <Link to="/memory" className="navs">
+          Memory
         </Link>
         <Outlet />
       </div>

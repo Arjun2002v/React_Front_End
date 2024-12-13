@@ -4,7 +4,6 @@ export const ClickableGrid = () => {
   const [past, setPast] = useState([]);
 
   const conRef = useRef(null);
-  const oi = ["1", "2", "3", "4"];
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -13,16 +12,15 @@ export const ClickableGrid = () => {
         if (prev.length === 0) {
           // if prev is no more the clearInterval
           clearInterval(interval);
-          return prev;
         }
         console.log(prev.length, "apple");
-        return prev.slice(0, -1); // else delete the element from the last clicked
+        return prev.slice(1); // else delete the element from the last clicked
         // Remove the first element  (0,-1) means the exept the last element everything else will be printed
       });
     }, 1000);
 
     return () => clearInterval(interval); // Cleanup on unmount or dependencies change
-  }, [past]);
+  }, [past, conRef]);
 
   return (
     <div

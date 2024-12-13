@@ -2,10 +2,11 @@ import React, { useEffect, useState } from "react";
 import Nav from "./Nav";
 
 const TrafficLight = () => {
-  const [start, setstart] = useState("red");
+  const [start, setstart] = useState("red"); //
   useEffect(() => {
     let interval = null;
     interval = setInterval(() => {
+      // interval used for changing color of the light every couple of seconds
       setstart((prev) => {
         if (prev === "red") return "green";
         if (prev === "green") return "yellow";
