@@ -4,7 +4,14 @@ const SidebarUCF = () => {
   const [visible, setVisible] = useState(false);
   const [add, setAdd] = useState(false);
   const [email, setEmail] = useState(false);
-  const [store, setStore] = useState("");
+  const [store, setStore] = useState([]);
+  const [query, setQuery] = useState("");
+
+  const search = (e) => {
+    return emails.filter((email) =>
+      email.name.toLowerCase().includes(e.toLowerCase())
+    );
+  };
 
   const storing = (i) => {
     setStore([...store, i.name]);
@@ -13,14 +20,14 @@ const SidebarUCF = () => {
 
   const emails = [
     { name: "123@gmail.com" },
-    { name: "123@gmail.com" },
-    { name: "123@gmail.com" },
-    { name: "123@gmail.com" },
-    { name: "123@gmail.com" },
-
+    { name: "124@gmail.com" },
+    { name: "125@gmail.com" },
+    { name: "126@gmail.com" },
+    { name: "127@gmail.com" },
     { name: "1234@gmail.com" },
     { name: "12345@gmail.com" },
   ];
+
   return (
     <div>
       <button onClick={() => setVisible(!visible)}>Press Me</button>
@@ -36,30 +43,27 @@ const SidebarUCF = () => {
           zIndex: 1000, // Ensure it appears above other elements
         }}
       >
-        Sidbar
+        Sidebar
         <button onClick={() => setEmail(true)}>Add</button>
-        {email ? (
-          <>
-            <div onClick={() => setAdd(true)}>Add a new file</div>
-          </>
-        ) : (
-          <></>
-        )}{" "}
-        b
+        {email && <div onClick={() => setAdd(true)}>Add a new file</div>}
         <div>
-          {add ? (
+          {add && (
             <div>
               <div>
-                <input type="text" placeholder="search your email" />
-                {emails.map((item, i) => (
+                <input
+                  type="text"
+                  placeholder="Search your email"
+                  value={query}
+                  onChange={(e) => setQuery(e.target.value)}
+                />
+
+                {search(query).map((item, i) => (
                   <div key={i}>
                     <h3 onClick={() => storing(item)}>{item.name}</h3>
                   </div>
                 ))}
               </div>
             </div>
-          ) : (
-            <></>
           )}
           <div
             style={{ display: "flex", flexDirection: "column", gap: "20px" }}
@@ -73,7 +77,10 @@ const SidebarUCF = () => {
                 padding: 0,
               }}
             >
-              {store}
+              {/* Render the stored email list */}
+              {store.map((email, index) => (
+                <li key={index}>{email}</li>
+              ))}
             </ul>
           </div>
         </div>
