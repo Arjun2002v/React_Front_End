@@ -4,6 +4,12 @@ const SidebarUCF = () => {
   const [visible, setVisible] = useState(false);
   const [add, setAdd] = useState(false);
   const [email, setEmail] = useState(false);
+  const [store, setStore] = useState("");
+
+  const storing = (i) => {
+    setStore([...store, i.name]);
+    setAdd(false);
+  };
 
   const emails = [
     { name: "123@gmail.com" },
@@ -47,7 +53,7 @@ const SidebarUCF = () => {
                 <input type="text" placeholder="search your email" />
                 {emails.map((item, i) => (
                   <div key={i}>
-                    <h3>{item.name}</h3>
+                    <h3 onClick={() => storing(item)}>{item.name}</h3>
                   </div>
                 ))}
               </div>
@@ -55,6 +61,21 @@ const SidebarUCF = () => {
           ) : (
             <></>
           )}
+          <div
+            style={{ display: "flex", flexDirection: "column", gap: "20px" }}
+          >
+            <ul
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                gap: "20px",
+                listStyle: "none",
+                padding: 0,
+              }}
+            >
+              {store}
+            </ul>
+          </div>
         </div>
       </div>
     </div>
