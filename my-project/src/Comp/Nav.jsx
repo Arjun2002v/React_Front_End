@@ -56,6 +56,9 @@ const Nav = () => {
         <Link to="/memory" className="navs">
           Memory
         </Link>
+        <Link to="/Check" className="navs">
+          CheckBox
+        </Link>
         <Outlet />
       </div>
     </div>
