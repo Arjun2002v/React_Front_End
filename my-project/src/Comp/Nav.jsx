@@ -59,6 +59,9 @@ const Nav = () => {
         <Link to="/Check" className="navs">
           CheckBox
         </Link>
+        <Link to="/transfer" className="navs">
+          Transfer List
+        </Link>
         <Outlet />
       </div>
     </div>

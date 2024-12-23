@@ -20,6 +20,7 @@ import { Grid_Blinking } from "./Comp/Grid_Blinking";
 import ClickabaleGrid from "./Comp/ClickabaleGrid";
 import SidebarUCF from "./Comp/SidebarUCF";
 import CheckBox from "./Comp/CheckBox";
+import TransferList from "./Comp/TransferList";
 
 const UserContext = createContext(null);
 
@@ -57,9 +58,10 @@ const App = () => {
 
     { path: "/grid", element: <Grid_Blinking /> },
     { path: "/sidebar", element: <SidebarUCF /> },
-
+    
     { path: "/click", element: <ClickabaleGrid /> },
     { path: "/Check", element: <CheckBox /> },
+    { path: "/transfer", element: <TransferList /> },
   ]);
 
   return (
