@@ -62,6 +62,9 @@ const Nav = () => {
         <Link to="/transfer" className="navs">
           Transfer List
         </Link>
+        <Link to="/typeclick" className="navs">
+          Type&Click
+        </Link>
         <Outlet />
       </div>
     </div>

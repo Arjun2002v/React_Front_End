@@ -18,9 +18,7 @@ const TransferList = () => {
   // Function to toggle the checkbox state (add/remove items from `checkboxState`)
   const checkstore = (item) => {
     // If the item is already selected, remove it; otherwise, add it
-    setCheckboxState((prev) =>
-      prev.includes(item) ? prev.filter((i) => i !== item) : [...prev, item]
-    );
+    setCheckboxState((prev) => [...prev, item]);
   };
 
   // Function to move selected items from `checkboxState` to `downList`
