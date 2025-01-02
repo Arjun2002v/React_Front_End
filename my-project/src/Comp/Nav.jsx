@@ -65,6 +65,10 @@ const Nav = () => {
         <Link to="/typeclick" className="navs">
           Type&Click
         </Link>
+        <Link to="/tic" className="navs">
+          Tic-Tac-Toe
+        </Link>
+
         <Outlet />
       </div>
     </div>

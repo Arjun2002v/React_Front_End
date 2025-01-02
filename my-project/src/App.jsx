@@ -22,6 +22,7 @@ import SidebarUCF from "./Comp/SidebarUCF";
 import CheckBox from "./Comp/CheckBox";
 import TransferList from "./Comp/TransferList";
 import TypeClick from "./Comp/TypeClick";
+import { TicTacToe } from "./Comp/TicTacToe";
 
 const UserContext = createContext(null);
 
@@ -64,6 +65,7 @@ const App = () => {
     { path: "/Check", element: <CheckBox /> },
     { path: "/transfer", element: <TransferList /> },
     { path: "/typeclick", element: <TypeClick /> },
+    { path: "/tic", element: <TicTacToe /> },
   ]);
 
   return (
