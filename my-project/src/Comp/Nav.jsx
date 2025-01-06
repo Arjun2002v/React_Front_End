@@ -68,6 +68,9 @@ const Nav = () => {
         <Link to="/tic" className="navs">
           Tic-Tac-Toe
         </Link>
+        <Link to="/useSwr" className="navs">
+          UseSwr
+        </Link>
 
         <Outlet />
       </div>

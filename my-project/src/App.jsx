@@ -23,6 +23,7 @@ import CheckBox from "./Comp/CheckBox";
 import TransferList from "./Comp/TransferList";
 import TypeClick from "./Comp/TypeClick";
 import { TicTacToe } from "./Comp/TicTacToe";
+import { UswSwr } from "./Comp/UswSwr";
 
 const UserContext = createContext(null);
 
@@ -66,6 +67,7 @@ const App = () => {
     { path: "/transfer", element: <TransferList /> },
     { path: "/typeclick", element: <TypeClick /> },
     { path: "/tic", element: <TicTacToe /> },
+    { path: "/useSwr", element: <UswSwr /> },
   ]);
 
   return (
