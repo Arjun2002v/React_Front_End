@@ -30,9 +30,7 @@ export const StarRating = () => {
                   borderRadius: "30px",
                 }}
                 onClick={() => selected(item)}
-              >
-                {item + 1}
-              </div>
+              ></div>
             </div>
           </>
         ))}
