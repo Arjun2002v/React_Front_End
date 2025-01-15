@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import Nav from "./Nav";
 
 export const StarRating = () => {
-  const [select, SetSelect] = useState([0]);
+  const [select, SetSelect] = useState([1]);
   const selected = (item) => {
+    // this is the function that is called when a star is clicked
     SetSelect(item + 1);
   };
   return (
@@ -29,7 +30,9 @@ export const StarRating = () => {
                   borderRadius: "30px",
                 }}
                 onClick={() => selected(item)}
-              ></div>
+              >
+                {item + 1}
+              </div>
             </div>
           </>
         ))}

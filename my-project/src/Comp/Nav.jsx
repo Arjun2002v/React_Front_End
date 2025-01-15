@@ -74,6 +74,12 @@ const Nav = () => {
         <Link to="/star" className="navs">
           Star
         </Link>
+        <Link to="/form" className="navs">
+          Form
+        </Link>
+        <Link to="/scroll" className="navs">
+          scroll
+        </Link>
 
         <Outlet />
       </div>

@@ -25,6 +25,8 @@ import TypeClick from "./Comp/TypeClick";
 import { TicTacToe } from "./Comp/TicTacToe";
 import { UswSwr } from "./Comp/UswSwr";
 import { StarRating } from "./Comp/StarRating";
+import { Form } from "./Comp/Form";
+import InfiniteScroll from "./Comp/InfiniteScroll";
 
 const UserContext = createContext(null);
 
@@ -70,6 +72,8 @@ const App = () => {
     { path: "/tic", element: <TicTacToe /> },
     { path: "/useSwr", element: <UswSwr /> },
     { path: "/star", element: <StarRating /> },
+    { path: "/form", element: <Form /> },
+    { path: "/scroll", element: <InfiniteScroll /> },
   ]);
 
   return (
