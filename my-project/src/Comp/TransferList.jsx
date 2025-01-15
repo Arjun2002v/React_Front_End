@@ -29,12 +29,13 @@ const TransferList = () => {
 
   return (
     <div>
+      <Nav />
       {/* Section for available items */}
       <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
         <h3>Available Items:</h3>
         {checkboxs
           // Filter out items that have already been moved
-          .filter((item) => !downList.includes(item.name))
+
           .map((item, index) => (
             <div key={index}>
               {/* Render each checkbox with its label */}

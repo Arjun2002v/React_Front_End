@@ -71,6 +71,9 @@ const Nav = () => {
         <Link to="/useSwr" className="navs">
           UseSwr
         </Link>
+        <Link to="/star" className="navs">
+          Star
+        </Link>
 
         <Outlet />
       </div>

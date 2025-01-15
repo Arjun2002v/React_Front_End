@@ -46,6 +46,7 @@ export const TicTacToe = () => {
 
   return (
     <>
+      <Nav />
       <div
         style={{
           display: "grid",
