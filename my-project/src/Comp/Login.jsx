@@ -2,12 +2,13 @@ import React, { useContext, useReducer, useState } from "react";
 import { UserContext } from "../App";
 import { useNavigate } from "react-router-dom";
 import Nav from "./Nav";
+import { use } from "react";
 
 const Login = () => {
   const initial = { userName: "", password: "" };
   const nav = useNavigate(); // used to navigate through the router url
-
-  const users = useContext(UserContext); //using context to pass state from global state
+ const users  =useContext(UserContext)
+  // const users = useContext(UserContext); //using context to pass state from global state
 
   const login = () => {
     if (!userName) alert("UserName is Needed");
@@ -36,7 +37,10 @@ const Login = () => {
 
   const [state, dispatch] = useReducer(reducer, initial);
   const { userName, password } = state;
-
+ if(userName){
+     const asda =use(UserContext)
+          console.log(asda,users,"saleem")
+ }
   return (
     <div>
       <Nav />
@@ -50,7 +54,9 @@ const Login = () => {
         />
       </div>
       <div className="log">
-        <label htmlFor="Password">Password</label>
+        <label htmlFor="Password" onClick={()=>{
+     
+        }}>Password</label>
         <input
           type="password"
           value={password}

@@ -28,9 +28,11 @@ import { StarRating } from "./Comp/StarRating";
 import { Form } from "./Comp/Form";
 import InfiniteScroll from "./Comp/InfiniteScroll";
 
+
 const UserContext = createContext(null);
 
 const App = () => {
+
   const users = [
     { id: "1", name: "Arjun", password: "1234" },
     { id: "2", name: "Achu", password: "123" },
