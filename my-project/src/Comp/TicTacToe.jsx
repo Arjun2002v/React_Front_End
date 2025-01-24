@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Nav from "./Nav";
 
 export const TicTacToe = () => {
   const [first, setFirst] = useState([]);
@@ -38,7 +39,7 @@ export const TicTacToe = () => {
         return updatedSecond;
       });
     }
-
+ 
     if (first.length + second.length === 8 && !result) {
       setResult("It's a Draw!");
     }
