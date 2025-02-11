@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 
 const TodoList = () => {
-  const [todo, setTodo] = useState("");
+  const [todo, setTodo] = useState();
   const [list, setList] = useState([]);
+
   const onAdd = () => {
-    setList([todo, ...list]);
-    setTodo("");
+    setList([...list, todo]);
   };
   const Dlt = (index) => {
-    setList(list.filter((_, i) => i !== index));
+    setList(list.filter((_, i) => i != index));
   };
   return (
     <>
