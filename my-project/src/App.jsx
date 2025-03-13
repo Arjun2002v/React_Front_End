@@ -13,6 +13,7 @@ import Login from "./Comp/Login";
 import TodoList from "./Comp/TodoList";
 import Nav from "./Comp/Nav";
 import Welcome from "./Comp/Welcome";
+import Counter from "./Comp/Counter";
 import RadioButtons from "./Comp/RadioButtons";
 
 import { Grid_Blinking } from "./Comp/Grid_Blinking";
@@ -28,11 +29,9 @@ import { StarRating } from "./Comp/StarRating";
 import { Form } from "./Comp/Form";
 import InfiniteScroll from "./Comp/InfiniteScroll";
 
-
 const UserContext = createContext(null);
 
 const App = () => {
-
   const users = [
     { id: "1", name: "Arjun", password: "1234" },
     { id: "2", name: "Achu", password: "123" },
@@ -59,6 +58,7 @@ const App = () => {
     { path: "/pagination", element: <Pagination /> },
     { path: "/", element: <Nav /> },
     { path: "/timer", element: <Timer /> },
+    { path: "/typeScript", element: <Counter /> },
     {
       path: "/welcome/:id",
       element: <Welcome />,
@@ -80,8 +80,7 @@ const App = () => {
 
   return (
     <div>
-      <h1>Front-end React Practice</h1>
-      <UserContext.Provider value={users}>
+s      <UserContext.Provider value={users}>
         <RouterProvider router={router} />
       </UserContext.Provider>
     </div>
@@ -90,3 +89,31 @@ const App = () => {
 
 export { UserContext };
 export default App;
+
+// // import AuditTemplates from "../Template/audit.template";
+// // import jsonData from "../Template/auditData.json";
+
+// // const App = () => {
+// //   const temp = AuditTemplates.getInstance();
+
+// //   const html = temp.generateBodyTemplateForAuditStatusReport(jsonData);
+// //   console.log(html);
+
+// //   return <div dangerouslySetInnerHTML={{ __html: html }} />;
+// // };
+
+// // export default App;
+// import AudiitTemplate from "./NewTemplate/audit.template (1)";
+// import data from "./NewTemplate/auditReport (1)";
+
+// const App = () => {
+//   const html = AudiitTemplate.getInstance();
+//   const template = html.generateBodyTemplateForAuditReport(data);
+//   console.log(template);
+//   return (
+//     <>
+//       <div dangerouslySetInnerHTML={{ __html: template }} />
+//     </>
+//   );
+// };
+// export default App;
