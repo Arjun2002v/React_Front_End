@@ -28,6 +28,7 @@ import { UswSwr } from "./Comp/UswSwr";
 import { StarRating } from "./Comp/StarRating";
 import { Form } from "./Comp/Form";
 import InfiniteScroll from "./Comp/InfiniteScroll";
+import { BlinkingText } from "./Comp/BlinkingText";
 
 const UserContext = createContext(null);
 
@@ -76,11 +77,13 @@ const App = () => {
     { path: "/star", element: <StarRating /> },
     { path: "/form", element: <Form /> },
     { path: "/scroll", element: <InfiniteScroll /> },
+    { path: "/blinker", element: <BlinkingText /> },
   ]);
 
   return (
     <div>
-s      <UserContext.Provider value={users}>
+      s{" "}
+      <UserContext.Provider value={users}>
         <RouterProvider router={router} />
       </UserContext.Provider>
     </div>
