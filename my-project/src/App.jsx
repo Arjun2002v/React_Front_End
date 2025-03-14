@@ -29,6 +29,7 @@ import { StarRating } from "./Comp/StarRating";
 import { Form } from "./Comp/Form";
 import InfiniteScroll from "./Comp/InfiniteScroll";
 import { BlinkingText } from "./Comp/BlinkingText";
+import { Ecommerce } from "./Comp/Ecommerce";
 
 const UserContext = createContext(null);
 
@@ -78,6 +79,7 @@ const App = () => {
     { path: "/form", element: <Form /> },
     { path: "/scroll", element: <InfiniteScroll /> },
     { path: "/blinker", element: <BlinkingText /> },
+    { path: "/ecommerce", element: <Ecommerce /> },
   ]);
 
   return (
