@@ -3,7 +3,8 @@ import React, { useState } from "react";
 export const Ecommerce = () => {
   const [fav, setFav] = useState([]);
   const [visible, setVisible] = useState(false);
-  const [icon, setIcon] = useState([]); // Store multiple favorite IDs
+  const [icon, setIcon] = useState([]);
+  const [cart, setCart] = useState([]);
 
   const Products = [
     {
@@ -30,6 +31,13 @@ export const Ecommerce = () => {
         : [...prev, item.id];
     });
   };
+  const addToCart = (product) => {
+    setCart((prevCart) => {
+      return prevCart.some((cartItem) => cartItem.id === product.id)
+        ? prevCart.filter((cartItem) => cartItem.id !== product.id) // Remove from cart
+        : [...prevCart, product]; // Add to cart
+    });
+  };
 
   return (
     <>
@@ -41,7 +49,11 @@ export const Ecommerce = () => {
               <p>{item.price}</p>
 
               {item.available === "Out of Stock" ? null : (
-                <button>Add to Cart</button>
+                <button onClick={() => addToCart(item)}>
+                  {cart.some((cartItem) => cartItem.id === item.id)
+                    ? `🛒 ${cart.length}`
+                    : "Add to Cart"}
+                </button>
               )}
 
               <button onClick={() => addFav(item)}>
@@ -51,7 +63,7 @@ export const Ecommerce = () => {
           ))}
         </div>
 
-        <button onClick={() => setVisible(true)}>See Favourites</button>
+        <button onClick={() => setVisible(!visible)}>See Favourites</button>
         {visible && (
           <>
             <h3>Favourite Items</h3>
