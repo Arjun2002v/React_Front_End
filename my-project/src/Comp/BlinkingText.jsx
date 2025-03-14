@@ -1,25 +1,44 @@
 import React, { useEffect, useState } from "react";
 
 export const BlinkingText = () => {
-  const [past, setPast] = useState("green");
-  const [isBlinking, setIsBlinking] = useState(false);
-
-  useEffect(() => {
-    if (!isBlinking) return; // Stop blinking if not active
-
-    const inter = setInterval(() => {
-      setPast((prev) => (prev === "green" ? "grey" : "green")); // Toggle color
-    }, 1000);
-
-    return () => clearInterval(inter); // Cleanup interval when blinking stops
-  }, [isBlinking]); // Runs when `isBlinking` changes
-
+  const [selected, setSelected] = useState([]);
+  const [listed, setListed] = useState([]);
+  const oioi = [
+    { name: "React" },
+    { name: "Vue" },
+    { name: "Me" },
+    { name: "Idk" },
+  ];
+  const all = (item) => {
+    setSelected(
+      selected.length === oioi.length ? [] : oioi.map((item) => item.name)
+    );
+  };
+  const submitted = () => {
+    setListed((prev) => [...prev, ...selected]);
+  };
   return (
     <>
-      <div className={past}>Hi</div>
-      <button onClick={() => setIsBlinking((prev) => !prev)}>
-        {isBlinking ? "Stop" : "Start"}
-      </button>
+      <button onClick={all}>Select all</button>
+      <button onClick={submitted}>Submit</button>
+
+      {oioi.map((item) => (
+        <>
+          <div style={{ display: "flex" }}>
+            {" "}
+            <input
+              type="checkbox"
+              onChange={() => all(item.name)}
+              checked={selected.includes(item.name)}
+            />
+            <label htmlFor={item.name}>{item.name}</label>
+          </div>
+        </>
+      ))}
+      <p>Selected item</p>
+      {listed.map((item) => (
+        <p>{item}</p>
+      ))}
     </>
   );
 };
